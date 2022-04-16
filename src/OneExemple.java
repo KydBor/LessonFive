@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class OneExemple {
     public static void main(String[]args) {
+        System.out.println("Размер матрицы: ");
         int q;
         Scanner scanner = new Scanner(System.in);
         q = scanner.nextInt();
@@ -23,22 +24,18 @@ public class OneExemple {
                 }
             }
         }
-        System.out.println("Сумма чётных чисел главной диагонали" + s);
+        System.out.println("Сумма чётных чисел главной диагонали: " + s);
 
-        int z = array.length -1;
-        int i = 0;
-        int j = 0;
+        System.out.print("Нечетные элементы главной диагонали и ниже: ");
+        for (int i = 1; i < array.length; i++) {
+            for (int j = 0; j <= i && j <= array[i].length; j++) {
+                if(array[i][j] % 2 - 1 == 0){
+                    int z = array[i][j];
 
-
-        for (i = 0; i >= 0; i--) {
-            System.out.print(array[i][j] + " ");
+                    System.out.print(z + " ");
+                }
+            }
         }
-        for (j = z; j >= 0; j--) {
-            System.out.print(array[i][z - i] + " ");
-
-        }
-
-
 
     }
 }
